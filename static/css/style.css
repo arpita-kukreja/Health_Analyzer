@@ -1,0 +1,170 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 634px; /* Increased the max-width */
+    height: 634px; /* Increased the height */
+    background-color: rgba(0, 0, 255, 0.1); /* Transparent blue background */
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.chat-header {
+    background-color: rgba(0, 0, 255, 0.2); /* Transparent darker blue for the header */
+    color: #ffffff;
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header h2 {
+    font-size: 28px; /* Increased font size */
+    font-weight: 500;
+}
+
+.chat-header p {
+    font-size: 16px; /* Increased font size */
+    font-weight: 300;
+    color: #bdbdbd;
+}
+
+.chat-content {
+    padding: 30px; /* Increased padding */
+    background-color: rgba(0, 0, 255, 0.05); /* Slightly transparent blue for the chat content */
+    height: 395px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bot-message,
+.user-message {
+    margin: 15px 0; /* Increased margin */
+    padding: 15px 20px; /* Increased padding */
+    border-radius: 25px;
+    max-width: 75%;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeInMessage 1s forwards;
+}
+
+.bot-message {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly white with transparency for the bot's messages */
+    color: #ffffff;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.user-message {
+    background-color: rgba(0, 121, 107, 0.7); /* Transparent teal for user messages */
+    color: white;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 20px; /* Increased padding */
+    background-color: rgba(0, 0, 255, 0.2); /* Transparent blue for the input area */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    align-items: center;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 16px 20px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    color: white;
+    transition: all 0.3s;
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: rgba(0, 121, 107, 1);
+    box-shadow: 0px 0px 8px rgba(0, 121, 107, 0.6);
+}
+
+.chat-input button {
+    background-color: #00796b; /* Button color */
+    color: white;
+    padding: 16px 22px; /* Increased padding */
+    font-size: 24px; /* Increased font size */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.chat-input button:hover {
+    background-color: #004d40;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+    .chat-container {
+        width: 95%;
+        height: 90%;
+    }
+
+    .chat-header h2 {
+        font-size: 22px; /* Slightly smaller for smaller screens */
+    }
+
+    .chat-header p {
+        font-size: 14px; /* Slightly smaller for smaller screens */
+    }
+
+    .chat-input input {
+        font-size: 16px; /* Slightly smaller for smaller screens */
+    }
+
+    .chat-input button {
+        padding: 12px 16px; /* Slightly smaller for smaller screens */
+        font-size: 22px; /* Slightly smaller for smaller screens */
+    }
+}

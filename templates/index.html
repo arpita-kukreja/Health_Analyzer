@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthBot - Transparent Blue Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>🩺 HealthAI Analyzer</h2>
+      <p>Your virtual health assistant</p>
+      <div class="upload-container">
+        <!-- Hidden file input, the label triggers the file input -->
+        <input type="file" id="fileInput" accept=".pdf,.png,.jpg,.jpeg" style="display: none;">
+        <label for="fileInput" class="upload-btn">📁 Upload Report</label>
+      </div>
+    </div>
+    <div class="chat-content" id="chatMessages">
+      <!-- Chat messages will appear here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask follow-up questions or diet advice..." />
+      <button id="sendBtn">➤</button>
+    </div>
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
