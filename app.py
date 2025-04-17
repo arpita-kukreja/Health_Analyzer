@@ -15,7 +15,7 @@ CORS(app)
 
 # Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-2.0-flash')
 
 # Configure Tesseract (Update path as needed)
 pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
